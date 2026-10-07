@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="5;url=https://kuwin.hair/">
+    <title>Redirecting to kuwin.hair</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background: #fafafa;
+            color: #1a1a1a;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Subtle animated gradient background */
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 50%, #f0f0f0 100%);
+            background-size: 400% 400%;
+            animation: gradientShift 12s ease infinite;
+            z-index: -1;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            text-align: center;
+            padding: 2rem;
+            animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Circular progress ring */
+        .progress-ring {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 2rem;
+            position: relative;
+        }
+
+        .progress-ring svg {
+            transform: rotate(-90deg);
+            width: 100%;
+            height: 100%;
+        }
+
+        .progress-ring circle {
+            fill: none;
+            stroke-width: 3;
+            stroke-linecap: round;
+        }
+
+        .progress-ring .track {
+            stroke: #e0e0e0;
+        }
+
+        .progress-ring .progress {
+            stroke: #1a1a1a;
+            stroke-dasharray: 339.292;
+            stroke-dashoffset: 339.292;
+            animation: progressCountdown 5s linear forwards;
+        }
+
+        @keyframes progressCountdown {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        .countdown-number {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 300;
+            letter-spacing: -0.02em;
+            color: #1a1a1a;
+        }
+
+        .countdown-number span {
+            animation: numberPulse 1s ease-in-out infinite;
+        }
+
+        @keyframes numberPulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(0.95); }
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            letter-spacing: -0.03em;
+            margin-bottom: 0.75rem;
+            color: #1a1a1a;
+        }
+
+        p {
+            font-size: 0.95rem;
+            font-weight: 300;
+            color: #888;
+            margin-bottom: 2.5rem;
+            letter-spacing: 0.01em;
+        }
+
+        .manual-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            font-weight: 400;
+            color: #1a1a1a;
+            text-decoration: none;
+            padding: 0.75rem 1.75rem;
+            border: 1px solid #d0d0d0;
+            border-radius: 100px;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            letter-spacing: 0.02em;
+        }
+
+        .manual-link:hover {
+            background: #1a1a1a;
+            color: #fff;
+            border-color: #1a1a1a;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .manual-link svg {
+            width: 14px;
+            height: 14px;
+            transition: transform 0.3s ease;
+        }
+
+        .manual-link:hover svg {
+            transform: translateX(3px);
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            .progress-ring {
+                width: 100px;
+                height: 100px;
+            }
+
+            .countdown-number {
+                font-size: 1.6rem;
+            }
+
+            h1 {
+                font-size: 1.25rem;
+            }
+
+            p {
+                font-size: 0.85rem;
+            }
+        }
+
+        /* Reduce motion preference */
+        @media (prefers-reduced-motion: reduce) {
+            body::before {
+                animation: none;
+            }
+            .container {
+                animation: none;
+                opacity: 1;
+            }
+            .progress-ring .progress {
+                animation-duration: 5s;
+            }
+            .countdown-number span {
+                animation: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="progress-ring">
+            <svg viewBox="0 0 120 120">
+                <circle class="track" cx="60" cy="60" r="54"></circle>
+                <circle class="progress" cx="60" cy="60" r="54"></circle>
+            </svg>
+            <div class="countdown-number">
+                <span id="countdown">5</span>
+            </div>
+        </div>
+        <h1>Redirecting you now</h1>
+        <p>You'll be taken to kuwin.hair in a moment</p>
+        <a href="https://kuwin.hair/" class="manual-link">
+            Go there now
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+        </a>
+    </div>
+
+    <script>
+        (function() {
+            var seconds = 5;
+            var countdownEl = document.getElementById('countdown');
+            var redirectUrl = 'https://kuwin.hair/';
+
+            function tick() {
+                seconds--;
+                if (seconds >= 0) {
+                    countdownEl.textContent = seconds;
+                }
+                if (seconds <= 0) {
+                    window.location.href = redirectUrl;
+                } else {
+                    setTimeout(tick, 1000);
+                }
+            }
+
+            // Start the countdown after a brief delay for the animation
+            setTimeout(tick, 1000);
+        })();
+    </script>
+</body>
+</html>
